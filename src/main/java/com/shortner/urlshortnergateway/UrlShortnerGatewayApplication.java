@@ -8,6 +8,7 @@ public class UrlShortnerGatewayApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(UrlShortnerGatewayApplication.class, args);
+        System.out.println("Hi");
     }
 
 }
