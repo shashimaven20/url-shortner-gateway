@@ -8,6 +8,8 @@ spring:
 
   cloud:
     gateway:
+      metrics:
+        enabled: true
       routes:
 
         # Auth Service (Public APIs)
@@ -34,6 +36,17 @@ spring:
           uri: http://localhost:8080
           predicates:
             - Path=/{shortCode}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  metrics:
+    tags:
+      application: gateway-service
 
 logging:
   level:
